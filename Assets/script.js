@@ -10,7 +10,7 @@ var specialCharacters = "~!@#$%^&*()_+~-={}[]:;'<>,./?";
 // Write password to the #password input
 function writePassword() {
   //length of the desired password
-  var length = Number(prompt("How many characters is in your password? (between 8 and 128)"));
+  var length = parseInt(prompt("How many characters is in your password? (between 8 and 128)"));
   //output the length to the console
   console.log(length);
 
@@ -43,9 +43,11 @@ function writePassword() {
     }
 
     //if the user presses cancel on the length prompt they are forced to restard
-  } else {
-    alert("Please try again!");
-    generatePassword();
+  } else if(length < 8 || length > 128){
+    alert("Please choose a correct length");
+    writePassword();
+  }else {
+    return " ";
   }
 
   //calls the generatePassword function and sets a var equal to it

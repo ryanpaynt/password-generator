@@ -32,7 +32,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ```
 GitHub Repo Link:
-https://github.com/ryanpaynt/password-generator/settings/pages
+https://github.com/ryanpaynt/password-generator/
 ```
 
 ```
