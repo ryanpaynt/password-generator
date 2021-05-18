@@ -9,6 +9,7 @@ var specialCharacters = "~!@#$%^&*()_+~-={}[]:;'<>,./?";
 
 // Write password to the #password input
 function writePassword() {
+  //length of the desired password
   var length = Number(prompt("How many characters is in your password?"));
   console.log(length);
 
