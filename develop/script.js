@@ -42,7 +42,7 @@ function writePassword() {
       writePassword();
     }
 
-  //if the user presses cancel on the length prompt they are forced to restard
+    //if the user presses cancel on the length prompt they are forced to restard
   } else {
     alert("Please try again!");
     generatePassword();
@@ -52,41 +52,57 @@ function writePassword() {
   var password = generatePassword();
   //logs the password in the console
   console.log(password);
-  //selects the 
+  //selects the textarea in html and assigns it to the var passwordText
   var passwordText = document.querySelector("#password");
 
+  //assigns the value of passwordText to password generated
   passwordText.value = password;
 
+  //function generatePassword
   function generatePassword() {
+    //variables
     var passcode = "";
     var i = 0;
+
+    //while i is not equal to the length of the password
     while (i !== length) {
+      //each conditional checking if the user chose each prompt. If chosen the prompt is true
       if (uppers) {
+        //chooses a random char from the universal string lowercaseLetters
         passcode += lowercaseLetters.charAt(Math.floor(Math.random() * lowercaseLetters.length));
-        console.log(passcode);
         i++;
+        //This conditional stops the while loop once the length matches the desired length
         if (passcode.length === length) {
+          //logs this into the console
+          console.log(passcode);
+          //returns passcode
           return passcode;
         }
       }
       if (lowers) {
+        //chooses a random char from the universal string uppercaseLetters
         passcode += uppercaseLetters.charAt(Math.floor(Math.random() * uppercaseLetters.length));
         i++;
         if (passcode.length === length) {
+          console.log(passcode);
           return passcode;
         }
       }
       if (numbers) {
+        //chooses a random char from the universal string number
         passcode += number.charAt(Math.floor(Math.random() * number.length));
         i++;
         if (passcode.length === length) {
+          console.log(passcode);
           return passcode;
         }
       }
       if (symbols) {
+        //chooses a random char from the universal string specialCharacter
         passcode += specialCharacters.charAt(Math.floor(Math.random() * specialCharacters.length));
         i++;
         if (passcode.length === length) {
+          console.log(passcode);
           return passcode;
         }
       }
