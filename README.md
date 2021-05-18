@@ -26,7 +26,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Screen Shot
 
-<img src= "./passw-gen.jpg">
+<img src= "./assets/passw-gen.jpg">
 
 ## Links
 
