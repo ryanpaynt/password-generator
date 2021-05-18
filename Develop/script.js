@@ -10,14 +10,19 @@ var specialCharacters = "~!@#$%^&*()_+~-={}[]:;'<>,./?";
 // Write password to the #password input
 function writePassword() {
   //length of the desired password
-  var length = Number(prompt("How many characters is in your password?"));
+  var length = Number(prompt("How many characters is in your password? (between 8 and 128)"));
+  //output the length to the console
   console.log(length);
 
-    console.log(length === undefined);
-
+  //checks if the user inputted the right length
   if (length >= 8 && length <= 128) {
 
+    //char variable
     var charUsed = 0;
+
+    //these set of conditionals check which characters the user wants
+    //each time the user chooses a prompt it ups the charUsed counter by one
+    //that way we can check if the user has not chosen any prompts at all.
     var uppers = confirm("Would you like to use uppercase letters?");
     console.log(uppers);
     if (uppers) { charUsed++; }
@@ -31,18 +36,23 @@ function writePassword() {
     console.log(symbols);
     if (symbols) { charUsed++; }
 
+    //if no characters are chosen the user is alerted then returned to the starting prompt
     if (charUsed === 0) {
       alert("Please select at least one option!");
       writePassword();
     }
 
+  //if the user presses cancel on the length prompt they are forced to restard
   } else {
     alert("Please try again!");
     generatePassword();
   }
 
+  //calls the generatePassword function and sets a var equal to it
   var password = generatePassword();
+  //logs the password in the console
   console.log(password);
+  //selects the 
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
